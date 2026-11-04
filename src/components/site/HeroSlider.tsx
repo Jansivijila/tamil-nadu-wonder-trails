@@ -23,7 +23,7 @@ export function HeroSlider() {
     return () => clearTimeout(t);
   }, [index, playing, hover, go]);
 
-  const slide = SLIDES[index];
+  const slide = SLIDES[index]!;
 
   return (
     <section className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-forest-deep" aria-roledescription="carousel" aria-label="Featured destinations"

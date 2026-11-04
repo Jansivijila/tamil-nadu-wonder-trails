@@ -25,8 +25,8 @@ export function Lightbox({ items, index, onClose, onIndex }: { items: LightboxIt
           <AnimatePresence mode="wait">
             <motion.figure key={index} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.35 }}
               className="max-h-[85vh] max-w-5xl" onClick={(e) => e.stopPropagation()}>
-              <img src={items[index!].src} alt={items[index!].alt} referrerPolicy="no-referrer" className="max-h-[78vh] w-auto rounded-xl object-contain" />
-              <figcaption className="mt-3 text-center text-sm text-on-dark/80">{items[index!].alt} · {index! + 1} / {items.length}</figcaption>
+              <img src={items[index!]!.src} alt={items[index!]!.alt} referrerPolicy="no-referrer" className="max-h-[78vh] w-auto rounded-xl object-contain" />
+              <figcaption className="mt-3 text-center text-sm text-on-dark/80">{items[index!]!.alt} · {index! + 1} / {items.length}</figcaption>
             </motion.figure>
           </AnimatePresence>
           <button aria-label="Next image" onClick={(e) => { e.stopPropagation(); go(1); }} className="absolute right-2 rounded-full glass p-3 text-on-dark hover:text-gold md:right-6"><ChevronRight className="h-6 w-6" /></button>
